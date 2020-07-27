@@ -19,3 +19,17 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
+## Write a short comment describing this function
+
+cacheSolve <- function(x, ...) {
+        ## Return a matrix that is the inverse of 'x'
+  gl <- x$getinv()
+  if(!is.null(gl)) {
+    message("Ya calculada!!!")
+    return(gl)
+  }
+  data <- x$get()
+  gl <- solve(data, ...)
+  x$setinv(gl)
+  gl  
+}
